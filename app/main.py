@@ -9,7 +9,7 @@ from app.core.config import settings
 from app.core.database import init_db
 from app.api.v1.api import api_router
 
-logger = logging.getLogger("otzar_backend")
+logger = logging.getLogger("rocklens_backend")
 
 
 @asynccontextmanager
@@ -121,7 +121,7 @@ async def v1_docs_redirect():
 async def health_check():
     return {
         "status": "healthy",
-        "system": "OTZAR Field Intelligence API",
-        "version": "2.4.1",
+        "system": "RockLens Geological Intelligence API",
+        "version": "3.0.0",
         "docs": "/docs",
     }
