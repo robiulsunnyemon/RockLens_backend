@@ -101,8 +101,14 @@ async def generic_exception_handler(request: Request, exc: Exception):
     )
 
 
+from app.api.v1.endpoints.identification import router as identification_router
+
 # Include API V1 Router (/api/v1/...)
 app.include_router(api_router, prefix=settings.API_V1_STR)
+
+# Also support direct /specimens/identify for mobile clients
+app.include_router(identification_router)
+
 
 
 @app.get("/", include_in_schema=False)
